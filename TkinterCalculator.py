@@ -96,8 +96,7 @@ class __key_button_command:
                     self.text_container.delete(0.0,tk.END)
                 else:
                     if (text_container_content.replace(chr(10),"") == ""):
-                        lable_text += self.content
-                        self.lable_container.configure(text=lable_text)
+                        pass
                     else:
                         if all([i not in lable_text for i in "+-x÷"]):
                             lable_text = ""
