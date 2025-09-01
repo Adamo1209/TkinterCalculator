@@ -1,7 +1,16 @@
 import tkinter as tk
 from tkinter import messagebox
+import sys
 
-icon_file_path = "\\".join(__file__.split("\\")[:-1] + ["calculator.png"])
+def icon_resource_direct():
+    if getattr(sys,"frozen",False):
+        path = sys._MEIPASS + "\\assets\\calculator.png"
+        return path
+    else:
+        path = "\\".join(__file__.split("\\")[:-1] + ["\\assets\\calculator.png"])
+        return path
+
+icon_file_path = icon_resource_direct()
 
 key = ["%","C","CE","÷",
            "1","2","3","x",
